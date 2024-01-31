@@ -2,7 +2,7 @@
 if(isset($_SESSION['logged_in'])){
     header("location: index.php");
     ob_end_flush();
-    
+
 }
 
 if(isset($_POST['login'])){
@@ -14,7 +14,7 @@ if(isset($_POST['login'])){
 
     foreach($check as $value){
         if($value['u_email'] == $email && password_verify($pass, $value['u_pass'])){
-            
+
             $_SESSION['logged_in'] = true;
             $_SESSION['u_id'] = $value['u_id'];
 
@@ -27,13 +27,6 @@ if(isset($_POST['login'])){
 }
 ?>
 
-<style>
-    body {
-        background-image: url("img/kh.jpg");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        background-attachment: fixed;
-    }
 </style>
 
 <div class="container">
